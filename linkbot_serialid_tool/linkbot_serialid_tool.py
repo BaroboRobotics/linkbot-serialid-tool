@@ -24,6 +24,8 @@ class StartQT4(QtGui.QDialog):
         self.ui.getId_pushButton.clicked.connect(self.getCurrentId)
         self.ui.selectAll_pushButton.clicked.connect(
             self.ui.serialId_lineEdit.selectAll)
+        self.ui.serialId_lineEdit.returnPressed.connect(
+            self.programCurrentSerialId)
 
     def accepted(self):
         try:
@@ -45,14 +47,18 @@ class StartQT4(QtGui.QDialog):
             QtGui.QMessageBox.warning(self, "Error: ", str(e))
 
     def programCurrentSerialId(self):
-        l = linkbot.Linkbot()
-        newId = self.ui.serialId_lineEdit.text().upper()
-        if len(newId) != 4:
-            raise Exception("Serial IDs must be 4 characters long.")
-        l._setSerialId(newId)
-        l.setBuzzerFrequency(440)
-        time.sleep(0.5)
-        l.setBuzzerFrequency(0)
+        try:
+            l = linkbot.Linkbot()
+            newId = self.ui.serialId_lineEdit.text().upper()
+            if len(newId) != 4:
+                raise Exception("Serial IDs must be 4 characters long.")
+            l._setSerialId(newId)
+            l.setBuzzerFrequency(440)
+            time.sleep(0.5)
+            l.setBuzzerFrequency(0)
+            self.ui.serialId_lineEdit.selectAll()
+        except Exception as e:
+            QtGui.QMessageBox.warning(self, "Error: ", str(e))
 
     def getCurrentId(self):
         try:

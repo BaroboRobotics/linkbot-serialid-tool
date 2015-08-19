@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'dialog.ui'
 #
-# Created: Wed Aug 19 15:13:10 2015
+# Created: Wed Aug 19 15:29:01 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -47,7 +47,7 @@ class Ui_Dialog(object):
         self.getId_pushButton.setObjectName(_fromUtf8("getId_pushButton"))
         self.gridLayout.addWidget(self.getId_pushButton, 1, 0, 1, 3)
         self.buttonBox = QtGui.QDialogButtonBox(Dialog)
-        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Apply|QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok|QtGui.QDialogButtonBox.Reset)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Apply|QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Reset)
         self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
         self.gridLayout.addWidget(self.buttonBox, 2, 0, 1, 3)
 
@@ -57,6 +57,6 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
         self.label.setText(_translate("Dialog", "New Serial Id:", None))
-        self.selectAll_pushButton.setText(_translate("Dialog", "Select All", None))
+        self.selectAll_pushButton.setText(_translate("Dialog", "&Select All", None))
         self.getId_pushButton.setText(_translate("Dialog", "Get ID", None))
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 from PyQt4 import QtCore, QtGui
 
@@ -18,6 +18,8 @@ class StartQT4(QtGui.QDialog):
         QtGui.QWidget.__init__(self, parent)
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
+
+        self.setWindowTitle('Linkbot Serial-ID Tool')
 
         self.ui.buttonBox.accepted.connect(self.accepted)
         self.ui.buttonBox.clicked.connect(self.buttonBoxClicked)

@@ -50,7 +50,7 @@ class StartQT4(QtGui.QDialog):
 
     def programCurrentSerialId(self):
         try:
-            l = linkbot.CLinkbot()
+            l = linkbot.CLinkbot('LOCL')
             newId = self.ui.serialId_lineEdit.text().upper()
             if len(newId) != 4:
                 raise Exception("Serial IDs must be 4 characters long.")
@@ -64,7 +64,7 @@ class StartQT4(QtGui.QDialog):
 
     def getCurrentId(self):
         try:
-            l = linkbot.Linkbot()
+            l = linkbot.CLinkbot('LOCL')
             QtGui.QMessageBox.information(self, "Serial ID", "Serial ID: " + l.getSerialId())
         except Exception as e:
             QtGui.QMessageBox.warning(

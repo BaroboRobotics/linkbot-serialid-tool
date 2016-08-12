@@ -9,7 +9,7 @@ try:
 except:
     from dialog import Ui_Dialog
 
-import linkbot
+import linkbot3 as linkbot
 import sys
 import time
 
@@ -50,11 +50,11 @@ class StartQT4(QtGui.QDialog):
 
     def programCurrentSerialId(self):
         try:
-            l = linkbot.Linkbot()
+            l = linkbot.CLinkbot()
             newId = self.ui.serialId_lineEdit.text().upper()
             if len(newId) != 4:
                 raise Exception("Serial IDs must be 4 characters long.")
-            l._setSerialId(newId)
+            l._set_serial_id(newId)
             l.setBuzzerFrequency(440)
             time.sleep(0.5)
             l.setBuzzerFrequency(0)

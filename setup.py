@@ -13,9 +13,7 @@ setup(
     name = "linkbot_serialid_tool",
     packages = ["linkbot_serialid_tool", ],
     version = version,
-    entry_points = {
-        "console_scripts": ['linkbot-serialid-tool=linkbot_serialid_tool.linkbot_serialid_tool:main']
-    },
+    scripts = ['bin/linkbot-serialid-tool.py',],
     install_requires = ["PyLinkbot3>= 3.0.0"],
     description = "Tool for programming Linkbot serial IDs",
     zip_safe = False,
